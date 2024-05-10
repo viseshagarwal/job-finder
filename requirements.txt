@@ -1,3 +1,4 @@
 django
 dotenv
 mysql-connector-python
+setuptools
