@@ -1,0 +1,72 @@
+{% extends 'user/master.html' %} {% load static %} {% block title %}
+<title>Forget Password</title>
+{% endblock %} {% block mycontent %}
+<!-- jp Tittle Wrapper Start -->
+<div class="jp_tittle_main_wrapper">
+  <div class="jp_tittle_img_overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="jp_tittle_heading_wrapper">
+          <div class="jp_tittle_heading">
+            <h2>Forget Password</h2>
+          </div>
+          <div class="jp_tittle_breadcrumb_main_wrapper">
+            <div class="jp_tittle_breadcrumb_wrapper">
+              <ul>
+                <li><a href="/">Home</a> <i class="fa fa-angle-right"></i></li>
+
+                <li>
+                  <a href="./Login">Login</a> <i class="fa fa-angle-right"></i>
+                </li>
+
+                <li>Forget Password</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- jp Tittle Wrapper End -->
+<!-- jp login wrapper start -->
+<div class="login_section">
+  <div class="login_form_wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <h1>FORGOT PASSWORD ?</h1>
+          <div class="login_wrapper">
+            <form method="POST" action="/ForgetPasswordAction">
+              {% csrf_token %}
+              <div class="formsix-pos">
+                <div class="form-group i-email">
+                  <input
+                    type="email"
+                    class="form-control"
+                    required
+                    id="email2"
+                    placeholder="Enter Email"
+                    name="txt1"
+                    required
+                  />
+                </div>
+                <div class="login_btn_wrapper">
+                  <input type="submit" value="SUBMIT" class="mybtn" />
+                </div>
+                <div class="login_message">
+                  <p>
+                    Don’t have an account ?
+                    <a href="./Register"> Register Now </a>
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'myAdmin/master.html' %} {% load static %} {% block title %}
+<title>Applied</title>
+{% endblock %} {% block content %}
+
+<div class="grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body" style="overflow: scroll">
+      <h4 class="card-title">Applied Table</h4>
+      <script
+        src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+        crossorigin="anonymous"
+      ></script>
+      <script
+        type="text/javascript"
+        charset="utf8"
+        src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"
+      ></script>
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css"
+      />
+      <script>
+        $(document).ready(function () {
+          $("#apply_table").DataTable();
+        });
+      </script>
+      <table class="table table-hover" id="apply_table">
+        <thead>
+          <tr>
+            <th>Job Application ID</th>
+            <th>Company Name</th>
+            <th>Job Seeker Name</th>
+            <th>Job Post Name</th>
+
+            <th>Job Application Date</th>
+            <th>Job Application Time</th>
+            <th>Job Application Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in apply %}
+          <tr>
+            <td>{{ i.0 }}</td>
+            <td>{{ i.1 }}</td>
+            <td>{{ i.2 }}</td>
+            <td>{{ i.3 }}</td>
+            <td>{{ i.4 }}</td>
+            <td>{{ i.5 }}</td>
+            <td>{{ i.6 }}</td>
+            <td>{{ i.7 }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock%}

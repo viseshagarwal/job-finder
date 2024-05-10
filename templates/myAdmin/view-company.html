@@ -1,0 +1,78 @@
+{% extends 'myAdmin/master.html' %} {% load static %} {% block title %}
+<title>Company</title>
+{% endblock %} {% block content %}
+
+<div class="grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body" style="overflow: scroll">
+      <h4 class="card-title">Company Table</h4>
+      <u> <a href="./Company_form">Add</a></u>
+      <script
+        src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+        crossorigin="anonymous"
+      ></script>
+      <script
+        type="text/javascript"
+        charset="utf8"
+        src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"
+      ></script>
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css"
+      />
+      <script>
+        $(document).ready(function () {
+          $("#comp_table").DataTable();
+        });
+      </script>
+      <table class="table table-hover" id="comp_table">
+        <thead>
+          <tr>
+            <th>Company ID</th>
+            <th>Name</th>
+            <th>Company Type</th>
+            <th>Address</th>
+            <th>Email ID</th>
+            <th>Mobile Number</th>
+            <th>Website</th>
+            <th>Is Admin</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in company %}
+          <tr>
+            <td>{{ i.0 }}</td>
+            <td>{{ i.2 }}</td>
+            <td>{{ i.4 }}</td>
+            <td>{{ i.5 }}</td>
+            <td>{{ i.6 }}</td>
+            <td>{{ i.7 }}</td>
+            <td>{{ i.8 }}</td>
+            <td>{{ i.10 }}</td>
+            <td><a href="./Company/edit/{{i.0}}">Edit</a></td>
+            <td
+              ><a href="./Company/delete/{{i.0}}" onclick="return delMsg();"
+                >Delete</a
+              ></td
+            >
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  function delMsg() {
+    if (confirm("Are you sure about deleting record?")) {
+      alert("1 row deleted.");
+      return true;
+    } else return false;
+  }
+</script>
+
+{% endblock %}

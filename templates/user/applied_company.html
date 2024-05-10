@@ -1,0 +1,69 @@
+{% extends 'user/master.html' %} {% load static %} {% block title %}
+<title>Applied Jobs</title>
+{% endblock %} {% block mycontent %}
+<div class="jp_tittle_main_wrapper">
+  <div class="jp_tittle_img_overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="jp_tittle_heading_wrapper">
+          <div class="jp_tittle_heading">
+            <h2>Applied Jobs</h2>
+          </div>
+          <div class="jp_tittle_breadcrumb_main_wrapper">
+            <div class="jp_tittle_breadcrumb_wrapper">
+              <ul>
+                <li><a href="/">Home</a> <i class="fa fa-angle-right"></i></li>
+                <li></li>
+                <li>Applied Jobs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="aboutus_section">
+  <div class="container">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <table id="applied_table" class="table">
+        <thead>
+          <tr>
+            <th>No.</th>
+            <th>Job Seeker Name</th>
+            <th>Job Seeker Email Id</th>
+            <th>Gender</th>
+            <th>Mobile No.</th>
+            <th>Job Post Name</th>
+            <th>Job Application Date</th>
+            <th>Job Application Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in comp_data %}
+          <tr>
+            <td
+              ><a href="/Candidate/{{i.8}}"><u>1</u></a></td
+            >
+            <td
+              ><a href="/Candidate/{{i.8}}"><u>{{i.0}}</u></a></td
+            >
+            <td
+              ><a href="mailto:{{i.1}}"><u>{{i.1}}</u></a></td
+            >
+            <td>{{i.2}}</td>
+            <td
+              ><a href="tel:{{i.3}}"><u>{{i.3}}</u></a></td
+            >
+            <td>{{i.5}}</td>
+            <td>{{i.6}}</td>
+            <td>{{i.7}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,216 @@
+{% extends 'myAdmin/master.html' %} {% load static %} {% block title %}
+<title>Add Job Seeker</title>
+{% endblock %} {% block content %}
+<!--<div class="col-md-6 grid-margin stretch-card">-->
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Job Seeker Form</h4>
+    <p class="card-description">Job Seeker Form</p>
+    <form
+      action="JobSeeker/inserted"
+      class="forms-sample"
+      id="Seeker_form"
+      enctype="multipart/form-data"
+      method="POST"
+    >
+      {% csrf_token %}
+      <!--<div class="form-group row">
+        <label for="exampleInputMobile" class="col-sm-3 col-form-label">Job Seeker ID</label>
+        <div class="col-sm-9">
+          
+        </div>
+      </div>-->
+      <input
+        type="hidden"
+        class="form-control"
+        id="exampleInputUsername2"
+        name="js_id"
+        pattern="[0-9]{10}"
+        placeholder="Enter Job seeker Id."
+        required
+        title="Kindly Enter Only Numbers."
+      />
+      <div class="form-group row">
+        <label for="exampleInputPassword2" class="col-sm-3 col-form-label"
+          >Password</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            minlength="6"
+            name="js_passwd"
+            placeholder="Enter Password."
+            required
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="exampleInputName" class="col-sm-3 col-form-label"
+          >Name</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="text"
+            class="form-control"
+            id="exampleInputName"
+            name="js_name"
+            pattern="^[A-Za-z -]+$"
+            placeholder="Enter Job Seeker Name."
+            required
+            title="Kindly Enter Only Characters."
+          />
+        </div>
+      </div>
+      <!--<div class="form-group row">
+            <label for="exampleInputName" class="col-sm-3 col-form-label">Company Type</label>
+            <div class="col-sm-9">
+              <input type="text" class="form-control" id="exampleInputName" name="company_type" pattern="^[A-Za-z -]+$" placeholder="Enter Company Type." required title="Kindly Enter Only Characters."/>
+            </div>
+      </div>-->
+      <div class="form-group row">
+        <label for="exampleInputName" class="col-sm-3 col-form-label"
+          >Address</label
+        >
+        <div class="col-sm-9">
+          <textarea
+            class="form-control"
+            name="js_address"
+            placeholder="Enter Address."
+            required
+          ></textarea>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="exampleInputdate" class="col-sm-3 col-form-label"
+          >Date Of Birth</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="date"
+            class="form-control"
+            id="exampleInputdate"
+            name="js_dob"
+            placeholder="Enter Date Of Birth."
+            required
+            title="Kindly Enter Date Of Birth."
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="exampleInputEmail2" class="col-sm-3 col-form-label"
+          >Email Id</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="email"
+            class="form-control"
+            id="exampleInputEmail2"
+            name="js_email"
+            placeholder="Enter Email Id."
+            required
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="exampleInputgender" class="col-sm-3 col-form-label"
+          >Gender</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="radio"
+            id="exampleInputgender"
+            name="js_gender"
+            required
+            value="M"
+          />
+          &nbsp;&nbsp;Male&nbsp;&nbsp;
+          <input
+            type="radio"
+            id="exampleInputgender"
+            name="js_gender"
+            value="F"
+          />
+          &nbsp;&nbsp;Female&nbsp;&nbsp;
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="exampleInputMobile" class="col-sm-3 col-form-label"
+          >Mobile Number</label
+        >
+        <div class="col-sm-9">
+          <input
+            type="number"
+            class="form-control"
+            id="exampleInputMobile"
+            maxlength="10"
+            minlength="10"
+            name="js_mobile"
+            pattern="[0-9]{10}"
+            placeholder="Enter Mobile Number."
+            required
+            title="Kindly Enter Valid Mobile Number"
+          />
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="exampleInputEmail2" class="col-sm-3 col-form-label"
+          >Resume</label
+        >
+        <div class="col-sm-9">
+          <input type="file" name="js_resume" id="exampleInputMobile" />
+          <p> DOC, DOCX, RTF, PDF FILE </p>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="exampleInputEmail2" class="col-sm-3 col-form-label"
+          >Profile Photo</label
+        >
+        <div class="col-sm-9">
+          <input type="file" name="js_photo" id="exampleInputMobile" />
+          <p> JPEG , JPG , PNG FILE </p>
+        </div>
+      </div>
+      <!--<div class="form-group row">
+        <label for="exampleInputMobile" class="col-sm-3 col-form-label">Is Admin</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="exampleInputMobile" maxlength="1" minlength="1" name="Is Admin" pattern="[0-9]{10}" placeholder="Is Admin" required title="Kindly Enter Valid Data."/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="exampleInputMobile" class="col-sm-3 col-form-label">Mobile Number</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="exampleInputMobile" maxlength="10" minlength="10" name="user_mobile" pattern="[0-9]{10}" placeholder="Enter Mobile Number." required title="Kindly Enter Valid Mobile Number."  />
+          </div>
+      </div>
+      <div class="form-group row">
+        <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Password</label>
+          <div class="col-sm-9">
+            <input type="password" class="form-control" id="password" minlength="6" name="user_password" placeholder="Enter Password." required/>
+          </div>
+      </div>
+      <div class="form-group row">
+        <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Re - Enter Password</label>
+          <div class="col-sm-9">
+            <input type="password" class="form-control" id="confirm_password" minlength="6" name="confirm_password" placeholder="Confirm Password."required/>
+          </div>
+      </div>
+      <div class="form-check form-check-flat form-check-primary">
+        <label class="form-check-label">
+          <input type="checkbox" class="form-check-input" />
+            Remember me
+          </label>
+      </div>-->
+      <button type="reset" class="btn btn-primary mr-2">Reset</button>
+      <button
+        type="submit"
+        class="btn btn-primary mr-2"
+        onclick="return addMsg();"
+        >Submit</button
+      >
+    </form>
+  </div>
+</div>
+{% endblock%}

@@ -1,0 +1,191 @@
+{% extends 'user/master.html' %} {% load static %} {% block title %}
+<title>Job Single</title>
+{% endblock %} {% block mycontent %}
+<div class="jp_tittle_main_wrapper">
+  <div class="jp_tittle_img_overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="jp_tittle_heading_wrapper">
+          <div class="jp_tittle_heading">
+            <h2>{{job.1}}</h2>
+          </div>
+          <div class="jp_tittle_breadcrumb_main_wrapper">
+            <div class="jp_tittle_breadcrumb_wrapper">
+              <ul>
+                <li><a href="#">Home</a> <i class="fa fa-angle-right"></i></li>
+                <li>
+                  <a href="/Job">Jobs</a> <i class="fa fa-angle-right"></i>
+                </li>
+                <!--    <li>
+                  <a href="#">Developer</a> <i class="fa fa-angle-right"></i>
+                </li>-->
+                <li>{{job.1}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- jp Tittle Wrapper End -->
+<!-- jp listing Single cont Wrapper Start -->
+<form
+  method="POST"
+  id="appliedjob_form"
+  action="/Job_Page/inserted"
+  enctype="multipart/form-data"
+>
+  {% csrf_token %}
+  <div class="jp_listing_single_main_wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+          <div class="jp_listing_left_sidebar_wrapper">
+            <div class="jp_job_des">
+              <h2>Job Description</h2>
+              <p>{{job.0}}</p>
+            </div>
+            <div class="jp_job_res">
+              <h2>Responsibilities</h2>
+              <p>{{job.8}}</p>
+            </div>
+            <div class="jp_job_res jp_job_qua">
+              <h2>Qualifications</h2>
+              <p>{{job.9}}</p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+              <div class="jp_pricing_form_btn_wrapper">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="submit" class="mybtn" value="APPLY NOW!" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div
+                class="jp_rightside_job_categories_wrapper jp_rightside_listing_single_wrapper"
+              >
+                <div class="jp_rightside_job_categories_heading">
+                  <h4>Job Overview</h4>
+                </div>
+                <div class="jp_jop_overview_img_wrapper">
+                  <div class="jp_jop_overview_img">
+                    <img
+                      src="{{job.2}}"
+                      alt="post_img"
+                      width="100"
+                      height="95"
+                    />
+                  </div>
+                </div>
+                <div class="jp_job_listing_single_post_right_cont">
+                  <div class="jp_job_listing_single_post_right_cont_wrapper">
+                    <h4>{{job.1}}</h4>
+                    <p><a href="/Company/{{job.3}}">{{job.4}}</a></p>
+
+                    <input type="hidden" name="comp_id" value="{{job.3}}" />
+                    <input
+                      type="hidden"
+                      name="job_post_id"
+                      value="{{job.11}}"
+                    />
+                  </div>
+                </div>
+
+                <div class="jp_listing_overview_list_outside_main_wrapper">
+                  <div
+                    class="jp_listing_overview_list_main_wrapper jp_listing_overview_list_main_wrapper2"
+                  >
+                    <div class="jp_listing_list_icon">
+                      <i class="fa fa-map-marker"></i>
+                    </div>
+                    <div class="jp_listing_list_icon_cont_wrapper">
+                      <ul>
+                        <li>Location:</li>
+                        <li>{{job.5}}</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div
+                    class="jp_listing_overview_list_main_wrapper jp_listing_overview_list_main_wrapper2"
+                  >
+                    <div class="jp_listing_list_icon">
+                      <i class="fa fa-info-circle"></i>
+                    </div>
+                    <div class="jp_listing_list_icon_cont_wrapper">
+                      <ul>
+                        <li>Job Title:</li>
+                        <li>{{job.1}}</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div
+                    class="jp_listing_overview_list_main_wrapper jp_listing_overview_list_main_wrapper2"
+                  >
+                    <div class="jp_listing_list_icon">
+                      <i class="fa fa-money"></i>
+                    </div>
+                    <div class="jp_listing_list_icon_cont_wrapper">
+                      <ul>
+                        <li>Salary:</li>
+                        <li>{{job.6}}</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div
+                    class="jp_listing_overview_list_main_wrapper jp_listing_overview_list_main_wrapper2"
+                  >
+                    <div class="jp_listing_list_icon">
+                      <i class="fa fa-th-large"></i>
+                    </div>
+                    <div class="jp_listing_list_icon_cont_wrapper">
+                      <ul>
+                        <li>Category:</li>
+                        <li>{{job.10}}</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div
+                    class="jp_listing_overview_list_main_wrapper jp_listing_overview_list_main_wrapper2"
+                  >
+                    <div class="jp_listing_list_icon">
+                      <i class="fa fa-star"></i>
+                    </div>
+                    <div class="jp_listing_list_icon_cont_wrapper">
+                      <ul>
+                        <li>Experience:</li>
+                        <li>{{job.7}}+ Years Experience</li>
+                      </ul>
+                    </div>
+                  </div>
+                  {% if request.COOKIES.Company_Id %}
+                  <div class="jp_job_post_right_overview_btn_wrapper">
+                    <div class="jp_job_post_right_overview_btn">
+                      <ul>
+                        <li><a href="./edit/{{job.11}}">Edit</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="jp_job_post_right_overview_btn_wrapper">
+                    <div class="jp_job_post_right_overview_btn">
+                      <ul>
+                        <li><a href="./delete/{{job.11}}">Delete</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock %}

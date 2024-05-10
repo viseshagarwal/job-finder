@@ -1,0 +1,208 @@
+{% extends 'myAdmin/master.html' %} {% load static %} {% block title %}
+<title>Add Company</title>
+{% endblock %} {% block content %}
+<div class="card-body">
+  <h4 class="card-title">Company Form</h4>
+  <p class="card-description">Company Form</p>
+  <form
+    action="/myAdmin/Company/update"
+    class="forms-sample"
+    id="Company_form"
+    enctype="multipart/form-data"
+    method="POST"
+  >
+    {% csrf_token %}
+    <!--
+    <div class="form-group row">
+      <label for="exampleInputMobile" class="col-sm-3 col-form-label"
+        >Company Id</label
+      >
+      <div class="col-sm-9">
+        
+      </div>
+    </div>-->
+    <input
+      type="hidden"
+      class="form-control"
+      id="exampleInputUsername2"
+      name="comp_id_txt"
+      pattern="[0-9]{10}"
+      placeholder="Enter Company Id."
+      required
+      title="Kindly Enter Only Numbers."
+      value="{{comp.0}}"
+    />
+    <div class="form-group row">
+      <label for="exampleInputEmail2" class="col-sm-3 col-form-label"
+        >Email Id</label
+      >
+      <div class="col-sm-9">
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail2"
+          name="comp_email_txt"
+          placeholder="Enter Email Id."
+          required
+          value="{{comp.6}}"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="exampleInputName" class="col-sm-3 col-form-label"
+        >Company Name</label
+      >
+      <div class="col-sm-9">
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputName"
+          name="comp_name_txt"
+          pattern="^[A-Za-z -]+$"
+          placeholder="Enter Company Name."
+          required
+          title="Kindly Enter Only Characters."
+          value="{{comp.2}}"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="exampleInputName" class="col-sm-3 col-form-label"
+        >About Company</label
+      >
+      <div class="col-sm-9">
+        <textarea
+          class="form-control"
+          name="about_comp"
+          placeholder="Enter About Company."
+          required
+        >
+{{comp.3}}</textarea
+        >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="exampleInputName" class="col-sm-3 col-form-label"
+        >Company Type</label
+      >
+      <div class="col-sm-9">
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputName"
+          name="comp_type_txt"
+          pattern="^[A-Za-z -]+$"
+          placeholder="Enter Company Type."
+          required
+          title="Kindly Enter Only Characters."
+          value="{{comp.4}}"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="exampleInputName" class="col-sm-3 col-form-label"
+        >Address</label
+      >
+      <div class="col-sm-9">
+        <textarea
+          class="form-control"
+          name="comp_address_txt"
+          placeholder="Enter Address."
+          required
+        >
+{{comp.5}}</textarea
+        >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="exampleInputMobile" class="col-sm-3 col-form-label"
+        >Mobile Number</label
+      >
+      <div class="col-sm-9">
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputMobile"
+          maxlength="10"
+          minlength="10"
+          name="comp_mobile_txt"
+          pattern="[0-9]{10}"
+          placeholder="Enter Mobile Number."
+          required
+          title="Kindly Enter Valid Mobile Number."
+          value="{{comp.7}}"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="exampleInputName" class="col-sm-3 col-form-label"
+        >Website</label
+      >
+      <div class="col-sm-9">
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputName"
+          name="website"
+          placeholder="Enter Website Name."
+          value="{{comp.8}}"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="exampleInputMobile" class="col-sm-3 col-form-label"
+        >Logo</label
+      >
+      <div class="col-sm-9">
+        <input
+          type="file"
+          name="comp_logo"
+          value=""
+          placeholder="Company Logo*"
+          required
+        />
+      </div>
+    </div>
+    <!--<div class="form-group row">
+      <label for="exampleInputMobile" class="col-sm-3 col-form-label">Is Admin</label>
+      <div class="col-sm-9">
+        <input type="radio" id="exampleInputMobile" maxlength="1" minlength="1" name="is_admin" pattern="[0-9]{10}" placeholder="Is Admin" required title="Kindly Enter Valid Data."/>
+        &nbsp;&nbsp;Yes
+        <input type="radio" id="exampleInputMobile" maxlength="1" minlength="1" name="is_admin" pattern="[0-9]{10}" placeholder="Is Admin" required title="Kindly Enter Valid Data."/>
+        &nbsp;&nbsp;No
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="exampleInputMobile" class="col-sm-3 col-form-label">Mobile Number</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="exampleInputMobile" maxlength="10" minlength="10" name="user_mobile" pattern="[0-9]{10}" placeholder="Enter Mobile Number." required title="Kindly Enter Valid Mobile Number."  />
+        </div>
+    </div>
+    <div class="form-group row">
+      <label for="exampleInputPassword2" class="col-sm-3 col-form-label">Password</label>
+      <div class="col-sm-9">
+        <input type="password" class="form-control" id="password" maxlength="8" minlength="6" name="user_password" placeholder="Enter Password." required/>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="exampleInputConfirmPassword2" class="col-sm-3 col-form-label">Re - Enter Password</label>
+      <div class="col-sm-9">
+        <input type="password" class="form-control" id="confirm_password" maxlength="8" minlength="6" name="confirm_password" placeholder="Enter Confirm Password." required/>
+      </div>
+    </div>
+    <div class="form-check form-check-flat form-check-primary">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input"/>
+          Remember me
+      </label>
+    </div>-->
+    <button type="reset" class="btn btn-primary mr-2">Reset</button>
+    <button
+      type="submit"
+      class="btn btn-primary mr-2"
+      onclick="return editMsg();"
+      >Submit</button
+    >
+  </form>
+</div>
+{% endblock%}

@@ -1,0 +1,168 @@
+{% extends 'user/master.html' %} {% load static %} {% block title %}
+<title>Add Post</title>
+{% endblock %} {% block mycontent %}
+
+<!-- jp Tittle Wrapper Start -->
+<div class="jp_tittle_main_wrapper">
+  <div class="jp_tittle_img_overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="jp_tittle_heading_wrapper">
+          <div class="jp_tittle_heading">
+            <h2>Add-Posting</h2>
+          </div>
+          <div class="jp_tittle_breadcrumb_main_wrapper">
+            <div class="jp_tittle_breadcrumb_wrapper">
+              <ul>
+                <li><a href="/">Home</a> <i class="fa fa-angle-right"></i></li>
+                <li>Add-Posting</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- jp Tittle Wrapper End -->
+<!-- jp ad post Wrapper Start -->
+<form
+  class="forms-sample"
+  method="POST"
+  action="/Job_Page/update"
+  id="job_post_form_1"
+>
+  {% csrf_token %}
+  <div class="jp_adp_main_section_wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <div class="jp_adp_form_heading_wrapper">
+            <h2>Job Details</h2>
+          </div>
+          <div class="jp_adp_form_wrapper">
+            <input
+              type="text"
+              placeholder="Job Title*"
+              name="job_title"
+              pattern="^[A-Za-z -]+$"
+              title="Please Enter Only Characters"
+              minlength="3"
+              value="{{job.4}}"
+              required
+            />
+            <input type="hidden" name="post_id" value="{{job.0}}" />
+          </div>
+          <div class="jp_adp_form_wrapper">
+            <input
+              type="text"
+              placeholder="Job Type*"
+              title="Please Enter Job Type"
+              name="job_type"
+              value="{{job.5}}"
+              required
+            />
+          </div>
+          <div class="jp_adp_form_wrapper">
+            <input
+              type="text"
+              placeholder="Educational Qualification*"
+              title="Please Enter Educational Qualification"
+              name="Qualification"
+              value="{{job.8}}"
+              required
+            />
+          </div>
+          <div class="jp_adp_form_wrapper">
+            <select name="job_state" required>
+              <option value="">Select*</option>
+              {% for i in state1 %}
+              <option value="{{i.0}}">{{i.1}}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 bottom_line_Wrapper">
+          <div class="jp_adp_form_heading_wrapper">
+            <p>Fields with * are mandatory</p>
+          </div>
+          <div class="jp_adp_form_wrapper">
+            <select name="job_category" required>
+              <option value="">Select*</option>
+              {% for i in categories %}
+              <option value="{{i.0}}">{{i.1}}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="jp_adp_form_wrapper">
+            <input
+              type="number"
+              placeholder="Salary*"
+              pattern="[0-9]{10}"
+              title="Please Enter Valid Number"
+              name="job_salary"
+              value="{{job.10}}"
+              required
+            />
+          </div>
+
+          <div class="jp_adp_form_wrapper">
+            <input
+              type="text"
+              placeholder="Experience*"
+              title="Please Enter Experience"
+              name="Experience"
+              value="{{job.9}}"
+              required
+            />
+          </div>
+          <div class="jp_adp_form_wrapper">
+            <select name="job_city" required>
+              <option value="">Select*</option>
+              {% for i in city1 %}
+              <option value="{{i.0}}">{{i.2}}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="jp_adp_textarea_main_wrapper">
+            <textarea
+              rows="7"
+              placeholder="Job Description*"
+              title="Please Enter Description"
+              name="job_description"
+              required
+            >
+{{job.6}}</textarea
+            >
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="jp_adp_textarea_main_wrapper">
+            <textarea
+              rows="7"
+              placeholder="Job Responsibilities*"
+              title="Please Enter Responsibilities"
+              name="job_responsibilities"
+              required
+            >
+{{job.7}}</textarea
+            >
+          </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+          <div class="jp_adp_choose_resume_bottom_btn_post">
+            <ul>
+              <li>
+                <input type="submit" class="mybtn1" value="&nbsp; Update job" />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock%}

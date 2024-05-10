@@ -1,0 +1,56 @@
+{% extends 'myAdmin/master.html' %} {% load static %} {% block title %}
+<title>Payment</title>
+{% endblock %} {% block content %}
+
+<div class="grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Payment Table</h4>
+      <script
+        src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+        crossorigin="anonymous"
+      ></script>
+      <script
+        type="text/javascript"
+        charset="utf8"
+        src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"
+      ></script>
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css"
+      />
+      <script>
+        $(document).ready(function () {
+          $("#pay_table").DataTable();
+        });
+      </script>
+      <table class="table table-hover" id="pay_table">
+        <thead>
+          <tr>
+            <th>Payment ID</th>
+            <th>Company Name</th>
+            <th>Payment Details</th>
+            <th>Payment Date</th>
+            <th>Payment Time</th>
+            <th>Payment Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in payment %}
+          <tr>
+            <td>{{ i.0 }}</td>
+            <td>{{ i.1 }}</td>
+            <td>{{ i.2 }}</td>
+            <td>{{ i.3 }}</td>
+            <td>{{ i.4 }}</td>
+            <td>{{ i.5 }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock%}

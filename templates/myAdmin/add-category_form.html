@@ -1,0 +1,23 @@
+{% extends 'myAdmin/master.html' %} {% load static %} {% block title %}
+<title>Add Category</title>
+{% endblock %} {% block content %}
+<div class="col-md-6 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Category Form</h4>
+      <!--<p class="card-description">Category Form</p>-->
+      <form class="forms-sample" action="Category/inserted" id="category_form" method="POST">
+        {% csrf_token %}
+        <div class="form-group row">
+          <label for="exampleInputEmail2" class="col-sm-3 col-form-label">Category Name</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="exampleInputName" name="cat_name" pattern="^[A-Za-z -]+$" placeholder="Enter Category Name" title="Kindly Enter Only Characters." required/>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary mr-2" onclick="return addMsg();">Submit</button>
+        <button class="btn btn-light">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock%}

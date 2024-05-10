@@ -1,0 +1,453 @@
+{% extends 'user/master.html' %} {% load static %} {% block title %}
+<title>Register</title>
+{% endblock %} {% block mycontent %}
+<!-- jp Tittle Wrapper Start -->
+<div class="jp_tittle_main_wrapper">
+  <div class="jp_tittle_img_overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="jp_tittle_heading_wrapper">
+          <div class="jp_tittle_heading">
+            <h2>Register</h2>
+          </div>
+          <div class="jp_tittle_breadcrumb_main_wrapper">
+            <div class="jp_tittle_breadcrumb_wrapper">
+              <ul>
+                <li><a href="/">Home</a> <i class="fa fa-angle-right"></i></li>
+                <li>Register</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<form
+  class="forms-sample"
+  method="POST"
+  action="Register/company/inserted"
+  id="register_form"
+  enctype="multipart/form-data"
+>
+  {% csrf_token %}
+  <div class="register_section">
+    <!-- register_form_wrapper -->
+    <div class="register_tab_wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div role="tabpanel">
+              <!-- Nav tabs -->
+              <ul id="tabOne" class="nav register-tabs">
+                <!--
+                <li class="active">
+                  <a href="#contentOne-1" data-toggle="tab"
+                    >personal account <br />
+                    <span>i am looking for a job</span></a
+                  >
+                </li>
+                -->
+                <li class="active">
+                  <a href="#contentOne-1" data-toggle="tab"
+                    >company account <br />
+                    <span>We are hiring Employees</span></a
+                  >
+                </li>
+              </ul>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <!--
+                <div
+                  class="tab-pane fade in active register_left_form"
+                  id="contentOne-1"
+                >
+                  <div class="jp_regiter_top_heading">
+                    <p>Fields with * are mandatory</p>
+                  </div>
+                  <div class="row">
+                   
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                      <input
+                        type="text"
+                        name="user_name_txt"
+                        placeholder="Full Name*"
+                        id="exampleInputMobile"
+                        pattern="^[A-Za-z -]+$"
+                        title="Please Enter Only Characters"
+                        minlength="3"
+                        required
+                      />
+                    </div>
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                      <input
+                        type="email"
+                        name="user_email_txt"
+                        id="exampleInputMobile"
+                        required
+                        value=""
+                        placeholder="Email*"
+                      />
+                    </div>
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                      <input
+                        type="password"
+                        name="user_password_txt"
+                        placeholder="Enter password*"
+                        minlength="6"
+                        id="exampleInputMobile"
+                        autocomplete="on"
+                        required
+                      />
+                    </div>
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                      <input
+                        type="password"
+                        name="user_confirm_password_txt"
+                        value=""
+                        placeholder="re-enter password*"
+                        minlength="6"
+                        id="exampleInputMobile"
+                        autocomplete="on"
+                        required
+                      />
+                    </div>
+                    
+                   
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                      <textarea
+                        type="text"
+                        name="user_address_txt"
+                        id="exampleInputMobile"
+                        placeholder="Address line*"
+                        required
+                      ></textarea>
+                    </div>
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                      <input
+                        type="text"
+                        maxlength="10"
+                        name="user_mobile_txt"
+                        minlength="10"
+                        pattern="[0-9]{10}"
+                        id="exampleInputMobile"
+                        title="Please enter valid Mobile Number"
+                        placeholder="Enter Mobile No*"
+                        required
+                      />
+                    </div>
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                      <label for="exampleInputdob" class="form-group col-md-6 col-sm-6 col-xs-12"
+                        >Date Of Birth</label
+                      >
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                      <input
+                        type="date"
+                        name="user_dob"
+                        id="exampleInputMobile"
+                        placeholder="Date of Birth"
+                        required
+                      />
+                    </div>
+                    </div>
+                   
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                      <label for="exampleInputgender" class="form-group col-md-6 col-sm-6 col-xs-12"
+                        >Gender</label
+                      >
+                      <div class="col-sm-9">
+                        <input
+                          type="radio"
+                          name="js_gender"
+                          value="M"
+                          id="exampleInputgender"
+                          required
+                        />&nbsp;&nbsp;Male&nbsp;&nbsp;
+              
+                        <input
+                          type="radio"
+                          name="js_gender"
+                          value="F"
+                          id="exampleInputgender"
+                        />&nbsp;&nbsp;Female&nbsp;&nbsp;
+                      </div>
+                    </div>
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                      <label for="exampleInputdob" class="form-group col-md-6 col-sm-6 col-xs-12"
+                        >Resume</label
+                      >
+                    <div
+                      class="form-group col-md-6 col-sm-6 col-xs-12 custom_input"
+                    >
+                      <input type="file" name="resume" />
+                      id="exampleInputMobile"
+                      <p>
+                        DOC, DOCX, RTF, PDF FILE
+                      </p>
+                    </div>
+                    </div>
+                    
+                    <div
+                      class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                    >
+                      <div class="check-box text-center">
+                        <input
+                          type="checkbox"
+                          name="term"
+                          required
+                          id="term"
+                          maxlength="8"
+                          minlength="6"
+                        />
+                        &ensp;
+                        <label for="account-option_1"
+                          >I agreed to the
+                          <a href="#" class="check_box_anchr"
+                            >Terms and Conditions</a
+                          >
+                          governing the use of job portal</label
+                        >
+                      </div>
+                    </div>
+                  
+                  </div>  -->
+
+                <!--  <div class="login_btn_wrapper register_btn_wrapper login_wrapper"id="helloworld">
+                  <a href="#" class="btn btn-primary login_btn"> register </a>
+                </div>
+                
+                  <div
+                    class="login_btn_wrapper register_btn_wrapper login_wrapper"
+                  >
+                    <input type="reset" class="mybtn" value="Reset" />
+                    <input type="submit" class="mybtn" value="Register" />
+                    
+                  <a href="#" class="btn btn-primary login_btn">Register 
+                  </a>
+                  </div>
+                  <div class="login_message">
+                    <p>Already a member? <a href="./Login"> Login Here </a></p>
+                  </div>
+                </div>-->
+                <div
+                  class="tab-pane fade in active register_left_form"
+                  id="contentOne-1"
+                >
+                  <div class="jp_regiter_top_heading">
+                    <p>Fields with * are mandatory</p>
+                  </div>
+                  <div class="row clearfix">
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                      <input
+                        type="text"
+                        name="comp_name_txt"
+                        value=""
+                        placeholder="Company Name*"
+                        title="Please Enter Only Characters"
+                        minlength="3"
+                        required
+                      />
+                    </div>
+                    <!--Form Group-->
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                      <input
+                        type="email"
+                        name="comp_email_txt"
+                        value=""
+                        placeholder="Email*"
+                        required
+                      />
+                    </div>
+                    <!--Form Group-->
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                      <input
+                        type="password"
+                        name="comp_enter_password_txt"
+                        value=""
+                        placeholder="Enter Password*"
+                        minlength="6"
+                        id="password"
+                        autocomplete="on"
+                        required
+                      />
+                    </div>
+                    <!--Form Group-->
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                      <input
+                        type="password"
+                        name="comp_re-enter_password_txt"
+                        value=""
+                        placeholder="re-enter password*"
+                        id="confirm_password"
+                        minlength="6"
+                        autocomplete="on"
+                        required
+                      />
+                    </div>
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                      <input
+                        type="text"
+                        name="comp_type_txt"
+                        value=""
+                        placeholder="Company Type*"
+                        required
+                      />
+                    </div>
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                      <textarea
+                        type="text"
+                        name="comp_address_txt"
+                        value=""
+                        placeholder="Address line*"
+                        required
+                      ></textarea>
+                    </div>
+                    <!--Form Group-->
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                      <input
+                        type="text"
+                        name="comp_mobile_txt"
+                        value=""
+                        placeholder="phone*"
+                        required
+                        maxlength="10"
+                        minlength="10"
+                        pattern="[0-9]{10}"
+                        title="please enter valid Mobile Number"
+                      />
+                    </div>
+                    <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                      <input
+                        type="url"
+                        name="comp_website_txt"
+                        value=""
+                        placeholder="website*"
+                        required
+                      />
+                    </div>
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                      <label
+                        for="exampleInputdob"
+                        class="form-group col-md-6 col-sm-6 col-xs-12"
+                        >Company Logo</label
+                      >
+                      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                        <input
+                          type="file"
+                          name="comp_logo"
+                          value=""
+                          placeholder="Company Logo*"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                      <textarea
+                        type="text"
+                        name="comp_about_txt"
+                        value=""
+                        placeholder="About Company*"
+                        required
+                      ></textarea>
+                    </div>
+                    <div class="row clearfix"> </div>
+                    <!--Form Group-->
+                    <!--
+                  <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                    <input
+                      type="text"
+                      name="field-name"
+                      value=""
+                      placeholder="company name"
+                    />
+                  </div>
+                  -->
+                    <!--
+                  <div class="form-group col-md-6 col-sm-6 col-xs-12">
+                    <input
+                      type="text"
+                      name="field-name"
+                      value=""
+                      placeholder="website"
+                    />
+                  </div>
+                  Form Group
+
+                    <div
+                      class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                    >
+                      <div class="check-box text-center">
+                        <input
+                          type="checkbox"
+                          name="shipping-option"
+                          id="account-option_2"
+                          required
+                        />
+                        &ensp;
+                        <label for="account-option_2"
+                          >I agreed to the
+                          <a href="#" class="check_box_anchr"
+                            >Terms and Conditions</a
+                          >
+                          governing the use of job portal</label
+                        >
+                      </div>
+                    </div>
+-->
+                  </div>
+
+                  <div
+                    class="login_btn_wrapper register_btn_wrapper login_wrapper"
+                  >
+                    <input type="reset" class="mybtn" value="Reset" />
+                    <input type="submit" class="mybtn" value="Register" />
+
+                    <!--  <a href="#" class="btn btn-primary login_btn">Register 
+             </a>-->
+                  </div>
+                  <div class="login_message">
+                    <p>Already a member? <a href="./Login"> Login Here </a></p>
+                  </div>
+                </div>
+              </div>
+
+              <!--
+
+
+          </form>
+
+
+
+
+            
+            <p class="btm_txt_register_form">
+              In case you are using a public/shared computer we recommend that
+              you logout to prevent any un-authorized access to your account
+            </p>
+            --></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- jp register wrapper end -->
+
+  <script>
+    var password = document.getElementById("password"),
+      confirm_password = document.getElementById("confirm_password");
+
+    function validatePassword() {
+      if (password.value != confirm_password.value) {
+        confirm_password.setCustomValidity("Password Don't Match");
+      } else {
+        confirm_password.setCustomValidity("");
+      }
+    }
+
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+  </script>
+</form>
+{% endblock %}

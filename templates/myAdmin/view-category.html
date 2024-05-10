@@ -1,0 +1,57 @@
+{% extends 'myAdmin/master.html' %} {% load static %} {% block title %}
+<title>Category</title>
+{% endblock %} {% block content %}
+
+<div class="grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Category Table</h4>
+      <u> <a href="./Category_form">Add</a></u>
+      <script
+        src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+        crossorigin="anonymous"
+      ></script>
+      <script
+        type="text/javascript"
+        charset="utf8"
+        src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"
+      ></script>
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css"
+      />
+      <script>
+        $(document).ready(function () {
+          $("#cat_table").DataTable();
+        });
+      </script>
+      <table class="table table-hover" id="cat_table">
+        <thead>
+          <tr>
+            <th>Category ID</th>
+            <th>Category Name</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in categories %}
+          <tr>
+            <td>{{ i.0 }}</td>
+            <td>{{ i.1 }}</td>
+            <td><a href="./Category/edit/{{i.0}}">Edit</a></td>
+            <td
+              ><a href="./Category/delete/{{i.0}}" onclick="return delMsg();"
+                >Delete</a
+              ></td
+            >
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock%}

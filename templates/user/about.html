@@ -1,0 +1,439 @@
+{% extends 'user/master.html' %} {% load static %} {% block title %}
+<title>About-Us</title>
+{% endblock %} {% block mycontent %}
+<!-- jp Tittle Wrapper Start -->
+<div class="jp_tittle_main_wrapper">
+  <div class="jp_tittle_img_overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="jp_tittle_heading_wrapper">
+          <div class="jp_tittle_heading">
+            <h2>About-Us</h2>
+          </div>
+          <div class="jp_tittle_breadcrumb_main_wrapper">
+            <div class="jp_tittle_breadcrumb_wrapper">
+              <ul>
+                <li><a href="/">Home</a> <i class="fa fa-angle-right"></i></li>
+                <li></li>
+                <li>About-Us</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- jp Tittle Wrapper End -->
+<!-- aboutus_section start-->
+<div class="aboutus_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+        <div class="about_text_wrapper">
+          <div class="section_heading section_2_heading">
+            <h2>how we <span>do it ?</span></h2>
+          </div>
+          <p>
+            There will be an Admin entity to manage complete website as well as
+            Companies and Job Seekers.
+          </p>
+          <p>
+            The Visitors can search jobs, view job categories, view available
+            jobs, view Company profile and sign up.
+          </p>
+          <p>
+            This website is to be conceived in its current form as a dynamic
+            site requiring constant updates both from the Companies as well as
+            the Job Seekers.
+          </p>
+          <ul>
+            <li>
+              <i class="fa fa-check-square" aria-hidden="true"></i
+              ><a href="#">Satisfaction guaranteed.</a>
+            </li>
+            <li>
+              <i class="fa fa-check-square" aria-hidden="true"></i
+              ><a href="#">Lifetime updates & support.</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+        <div class="about_image_wrapper">
+          <img
+            class="img-responsive"
+            src="{% static 'user/images/content/register_bg.jpg' %}"
+            alt="about-img"
+          />
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        <div class="about_text_wrapper abt_2_para">
+          <div class="section_heading section_2_heading">
+            <h2>why we<span> do it ?</span></h2>
+          </div>
+          <p>
+            The objective of the project is to enable Companies to publish their
+            vacancies, also have an option to search candidate resumes and find
+            good candidates while Job Seekers search for their jobs, find
+            appropriate jobs, view personal job listings and can post their
+            resumes.
+          </p>
+          <!--<p>
+            Lorem Ipsum has been the industry's standard dummy text ever sincer
+            they 1500s, when an unknown printer took and galley onsequat ipsum,
+            orbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a
+            ornare odio. Sed non mauris vitae erat consequat auctor eu in elit.
+            Class aptent taciti sociosqu ad a diam ultricie of type and
+            scrambled. nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+          </p>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- jp best deal Wrapper Start -->
+<!--
+<div class="jp_best_deal_main_wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="jp_best_deal_heading_wrapper">
+          <div class="jp_best_deal_heading">
+            <h4>Offering the best Deals</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div class="jp_best_deal_main_cont_wrapper">
+          <div class="jp_best_deal_icon_sec">
+            <i class="flaticon-magnifying-glass"></i>
+          </div>
+          <div class="jp_best_deal_cont_sec">
+            <h4><a href="#">Search a Jobs</a></h4>
+            <p>Proin gravida nibh Aenean sollicitudin...</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div class="jp_best_deal_main_cont_wrapper">
+          <div class="jp_best_deal_icon_sec">
+            <i class="flaticon-users"></i>
+          </div>
+          <div class="jp_best_deal_cont_sec">
+            <h4><a href="#">Apply a Job</a></h4>
+            <p>Proin gravida nibh Aenean sollicitudin...</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div
+          class="jp_best_deal_main_cont_wrapper jp_best_deal_main_cont_wrapper2"
+        >
+          <div class="jp_best_deal_icon_sec">
+            <i class="flaticon-shield"></i>
+          </div>
+          <div class="jp_best_deal_cont_sec">
+            <h4><a href="#">Job Security</a></h4>
+            <p>Proin gravida nibh Aenean sollicitudin...</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div
+          class="jp_best_deal_main_cont_wrapper jp_best_deal_main_cont_wrapper2"
+        >
+          <div class="jp_best_deal_icon_sec">
+            <i class="flaticon-notification"></i>
+          </div>
+          <div class="jp_best_deal_cont_sec">
+            <h4><a href="#">Job Notifications</a></h4>
+            <p>Proin gravida nibh Aenean sollicitudin...</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div
+          class="jp_best_deal_main_cont_wrapper jp_best_deal_main_cont_wrapper2"
+        >
+          <div class="jp_best_deal_icon_sec">
+            <i class="flaticon-wallet"></i>
+          </div>
+          <div class="jp_best_deal_cont_sec">
+            <h4><a href="#">Essay Pay Money</a></h4>
+            <p>Proin gravida nibh Aenean sollicitudin...</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+        <div
+          class="jp_best_deal_main_cont_wrapper jp_best_deal_main_cont_wrapper2"
+        >
+          <div class="jp_best_deal_icon_sec">
+            <i class="flaticon-people"></i>
+          </div>
+          <div class="jp_best_deal_cont_sec">
+            <h4><a href="#">Happy Support</a></h4>
+            <p>Proin gravida nibh Aenean sollicitudin...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+-->
+<!-- jp best deal Wrapper End -->
+<!-- jp career Wrapper Start -->
+<!---- <div class="jp_career_main_wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="jp_hiring_slider_main_wrapper">
+                    <div class="jp_career_slider_heading_wrapper">
+                        <h2>Career advice</h2>
+                    </div>
+                    <div class="jp_career_slider_wrapper">
+                        <div class="owl-carousel owl-theme">
+                            <div class="item jp_recent_main">
+                                <div class="jp_career_main_box_wrapper">
+                                    <div class="jp_career_img_wrapper">
+                                        <img src="{% static 'user/images/content/car_img1.jpg' %}" alt="career_img" />
+                                    </div>
+                                    <div class="jp_career_cont_wrapper">
+                                        <p><i class="fa fa-calendar"></i>&nbsp;&nbsp; <a href="#">20 OCT, 2017</a></p>
+                                        <h3><a href="#">Hey Seeker, It’s Time</a></h3>
+                                        <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat.</p>
+                                    </div>
+                                </div>
+                                <div class="jp_career_slider_bottom_cont">
+                                    <ul>
+                                        <li><img src="{% static 'user/images/content/blog_small_img.jpg' %}" alt="small_img" class="img-circle">&nbsp;&nbsp; <a href="#">Jhon Doe</a></li>
+                                    </ul>
+                                    <p><a href="#"><i class="fa fa-comments"></i></a></p>
+                                </div>
+                            </div>
+                            <div class="item jp_recent_main">
+                                <div class="jp_career_main_box_wrapper">
+                                    <div class="jp_career_img_wrapper">
+                                        <img src="{% static 'user/images/content/car_img2.jpg' %}" alt="career_img" />
+                                    </div>
+                                    <div class="jp_career_cont_wrapper">
+                                        <p><i class="fa fa-calendar"></i>&nbsp;&nbsp; <a href="#">20 OCT, 2017</a></p>
+                                        <h3><a href="#">Hey Seeker, It’s Time</a></h3>
+                                        <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat.</p>
+                                    </div>
+                                </div>
+                                <div class="jp_career_slider_bottom_cont">
+                                    <ul>
+                                        <li><img src="{% static 'user/images/content/blog_small_img.jpg' %}" alt="small_img" class="img-circle">&nbsp;&nbsp; <a href="#">Jhon Doe</a></li>
+                                    </ul>
+                                    <p><a href="#"><i class="fa fa-comments"></i></a></p>
+                                </div>
+                            </div>
+                            <div class="item jp_recent_main">
+                                <div class="jp_career_main_box_wrapper">
+                                    <div class="jp_career_img_wrapper">
+                                        <img src="{% static 'user/images/content/car_img3.jpg' %}" alt="career_img" />
+                                    </div>
+                                    <div class="jp_career_cont_wrapper">
+                                        <p><i class="fa fa-calendar"></i>&nbsp;&nbsp; <a href="#">20 OCT, 2017</a></p>
+                                        <h3><a href="#">Hey Seeker, It’s Time</a></h3>
+                                        <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat.</p>
+                                    </div>
+                                </div>
+                                <div class="jp_career_slider_bottom_cont">
+                                    <ul>
+                                        <li><img src="{% static 'user/images/content/blog_small_img.jpg' %}" alt="small_img" class="img-circle">&nbsp;&nbsp; <a href="#">Jhon Doe</a></li>
+                                    </ul>
+                                    <p><a href="#"><i class="fa fa-comments"></i></a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>--->
+<!-- jp career Wrapper End -->
+<!--
+<!-- jp counter Wrapper Start --
+<div class="jp_counter_main_wrapper">
+  <div class="gc_counter_cont_wrapper">
+    <div class="count-description">
+      <span class="timer">2540</span><i class="fa fa-plus"></i>
+      <h5 class="con1">Jobs Available</h5>
+    </div>
+  </div>
+  <div class="gc_counter_cont_wrapper2">
+    <div class="count-description">
+      <span class="timer">7325</span><i class="fa fa-plus"></i>
+      <h5 class="con2">Members</h5>
+    </div>
+  </div>
+  <div class="gc_counter_cont_wrapper3">
+    <div class="count-description">
+      <span class="timer">1924</span><i class="fa fa-plus"></i>
+      <h5 class="con3">Resumes</h5>
+    </div>
+  </div>
+  <div class="gc_counter_cont_wrapper4">
+    <div class="count-description">
+      <span class="timer">4275</span><i class="fa fa-plus"></i>
+      <h5 class="con4">Company</h5>
+    </div>
+  </div>
+</div>
+-->
+<!-- jp counter Wrapper End -->
+<!-- aboutus_section end -->
+<div class="aboutus_page_2_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+        <div class="aboutus_text_section abt_txt_page_2">
+          <h2>Who We <span>Are</span></h2>
+          <p>
+            Job Finder Website is developed for creating an interactive job
+            vacancy for candidates.
+          </p>
+          <div class="row">
+            <div class="col-md-6">
+              <!--<ul>
+                <li>
+                  <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i
+                  >&nbsp;&nbsp;Audit &amp; Assurance
+                </li>
+                <li>
+                  <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i
+                  >&nbsp;&nbsp;Business Services
+                </li>
+                <li>
+                  <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i
+                  >&nbsp;&nbsp;IT Control Solutions
+                </li>
+              </ul>-->
+            </div>
+            <div class="col-md-6">
+              <!--<ul>
+                <li>
+                  <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i
+                  >&nbsp;&nbsp;Audit &amp; Assurance
+                </li>
+                <li>
+                  <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i
+                  >&nbsp;&nbsp;Business Services
+                </li>
+                <li>
+                  <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i
+                  >&nbsp;&nbsp;IT Control Solutions
+                </li>
+              </ul>-->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+        <div class="accordion_wrapper abt_page_2_wrapper">
+          <!--
+          <div class="panel-group" id="accordion_threeLeft">
+             <!--
+            <div class="panel panel-default">
+              <div class="panel-heading desktop">
+                <h4 class="panel-title">
+                  <a
+                    class="collapsed"
+                    data-toggle="collapse"
+                    data-parent="#accordion_threeLeft"
+                    href="#collapseTwentyLeftone"
+                    aria-expanded="true"
+                  >
+                    Our Visions and Missions
+                  </a>
+                </h4>
+              </div>
+              <div
+                id="collapseTwentyLeftone"
+                class="panel-collapse collapse"
+                aria-expanded="true"
+                role="tablist"
+              >
+                <div class="panel-body">
+                  Praesent in nisl egestas mauris aliquam luctus. Ut auctor
+                  faucibus orci, nec semper purus ultrices idorbi nec lorem
+                  risus orbi vitae felis gravida Pellentesque id eros quis massa
+                  convallis feugiat eu quis urna.
+                </div>
+              </div>
+            </div>
+             /.panel-default 
+             
+            <div class="panel panel-default">
+              <div class="panel-heading horn">
+                <h4 class="panel-title">
+                  <a
+                    data-toggle="collapse"
+                    data-parent="#accordion_threeLeft"
+                    href="#collapseTwentyLeftTwo"
+                    aria-expanded="false"
+                  >
+                    Our Corporate Responsibility
+                  </a>
+                </h4>
+              </div>
+              <div
+                id="collapseTwentyLeftTwo"
+                class="panel-collapse collapse in"
+                aria-expanded="false"
+                role="tablist"
+              >
+                <div class="panel-body">
+                  Praesent in nisl egestas mauris aliquam luctus. Ut auctor
+                  faucibus orci, nec semper purus ultrices idorbi nec lorem
+                  risus orbi vitae felis gravida Pellentesque id eros quis massa
+                  convallis feugiat eu quis urna.
+                </div>
+              </div>
+            </div>
+            <!-- /.panel-default 
+            <div class="panel panel-default">
+              <div class="panel-heading bell">
+                <h4 class="panel-title">
+                  <a
+                    class="collapsed"
+                    data-toggle="collapse"
+                    data-parent="#accordion_threeLeft"
+                    href="#collapseTwentyLeftThree"
+                    aria-expanded="false"
+                  >
+                    Visual Page Builder
+                  </a>
+                </h4>
+              </div>
+              <div
+                id="collapseTwentyLeftThree"
+                class="panel-collapse collapse"
+                aria-expanded="false"
+                role="tablist"
+              >
+                <div class="panel-body">
+                  Praesent in nisl egestas mauris aliquam luctus. Ut auctor
+                  faucibus orci, nec semper purus ultrices idorbi nec lorem
+                  risus orbi vitae felis gravida Pellentesque id eros quis massa
+                  convallis feugiat eu quis urna.
+                </div>
+              </div>
+            </div>
+            <!-- /.panel-default -->
+        </div>
+        <!--end of /.panel-group
+        </div>-->
+      </div>
+      <!--end of /.col-sm-6-->
+    </div>
+  </div>
+</div>
+{% endblock %}

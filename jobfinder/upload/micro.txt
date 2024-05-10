@@ -1,0 +1,16 @@
+hello, so my topic for micro presentation is AI and related things that use AI::::::
+
+Sometimes when people here about AI all they could think about is robots taking over the world, complete mayhem, people freaking out, and the end of the world is getting closer, etc. the stuffs they see in movies , but the reality is something else...
+AI is really just a program or machine's ability to learn and think for itself in such a way that it is capable of developing skills as it practices and gains experience. 
+some technologies that we use in our day to day life but we are less bothered to know how they actually work are like:
+1.siri, microsoft cortana , alexa etc:: they are all best examples of speech rocognition softwares available today.the program connects to your information automatically, and uses machine learning technology to learn and become smarter.
+2. just like siri etc even gmail platform uses machine learning to stop unwanted email or spam from entering your inbox.the system analyzes and learns from previous examples and the most accurate decisions it can, based on them.
+3. tesla:: one of the car industry leaders , tesla not only manufactures cars with flawless and gorgeous designs, but it also created smart vehicles with predictive powers.
+onr of their cars' most unique features is the self driving hardware, alongside a bunch of other high-tech innovations.
+4. Amazon::Amazon's AI has been around for a long time now.. the sites pedictions and suggestions have increased their sales massively.this technology can find out what your preferences and shopping behaviours are with the most incredible precisions.
+sometimes in future they are even planning to implement a shipping system which they call "anticipatery shipping" that delivers products before you even request them or even know you need them.  for time being this project is still in work.
+5.Spotify: its one of the most distinguished music platforms for a reason. this app uses AI to connect with its users, creating daily playlists or mixes, based on what you've been listening lately.It also seggesing new artist and albums you might like .
+
+There are many other day to day apps we use that uses AI for processing like Google Now,Google Assistant, Netflix, Google Translate , Facebook, YouTube, Google Maps etc.
+
+further I would like to conclude by saying AI can help us a lot if we use it to our advantages.It already allows us to perform many technical , repetitive and mechanical processes, so we can focus on the things that really matter, and exploit our potential.

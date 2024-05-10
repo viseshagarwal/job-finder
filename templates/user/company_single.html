@@ -1,0 +1,154 @@
+{% extends 'user/master.html' %} {% load static %} {% block title %}
+<title>Company Profile</title>
+{% endblock %} {% block mycontent %}
+<!-- jp Tittle Wrapper Start -->
+<div class="jp_tittle_main_wrapper jp_cs_tittle_main_wrapper">
+  <div class="jp_tittle_img_overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="jp_tittle_heading_wrapper">
+          <div class="jp_tittle_heading">
+            <h2>{{comp.0}}</h2>
+          </div>
+          <div class="jp_tittle_breadcrumb_main_wrapper">
+            <div class="jp_tittle_breadcrumb_wrapper">
+              <ul>
+                <li><a href="#">Home</a> <i class="fa fa-angle-right"></i></li>
+                <li>{{comp.0}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="jp_cs_com_info_wrapper">
+          <div class="jp_cs_com_info_img">
+            <img src="{{comp.7}}" alt="job_img" width="100" height="95" />
+          </div>
+          <div class="jp_cs_com_info_img_cont">
+            <p>{{comp.2}}</p>
+            <h3> <i class="fa fa-map-marker"></i> &nbsp;&nbsp;{{comp.1}} </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- jp Tittle Wrapper End -->
+<!-- jp listing Single cont Wrapper Start -->
+<div class="jp_listing_single_main_wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        <div class="jp_listing_left_sidebar_wrapper">
+          <div class="jp_job_des">
+            <h2>Company Description</h2>
+            <p>{{comp.3}} </p>
+          </div>
+          <br />
+          <div class="jp_job_des">
+            <h2>Contact Us</h2>
+            <p><i class="fa fa-map-marker"></i> &nbsp;&nbsp;{{comp.1}} </p>
+
+            <ul>
+              <li>
+                <i class="fa fa-globe"></i>&nbsp;&nbsp;
+                <a href="https://{{comp.4}}" target="_blank">{{comp.4}}</a>
+              </li>
+              <li>
+                <i class="fa fa-phone"></i> &nbsp; &nbsp;<a
+                  href="tel:+91{{comp.5}}"
+                  >+91{{comp.5}}</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div
+              class="jp_rightside_job_categories_wrapper jp_rightside_listing_single_wrapper"
+            >
+              <div class="jp_rightside_job_categories_heading">
+                <h4>Company Overview</h4>
+              </div>
+              <div class="jp_jop_overview_img_wrapper">
+                <div class="jp_jop_overview_img">
+                  <img
+                    src="{{comp.7}}"
+                    alt="post_img"
+                    width="100"
+                    height="95"
+                  />
+                </div>
+              </div>
+              <div class="jp_job_listing_single_post_right_cont">
+                <div class="jp_job_listing_single_post_right_cont_wrapper">
+                  <h4>{{comp.0}}</h4>
+                  <p>{{comp.2}}</p>
+                </div>
+              </div>
+              <div class="jp_job_post_right_overview_btn_wrapper">
+                <div class="jp_job_post_right_overview_btn">
+                  <ul>
+                    <li><a href="#">{{comp.8}} jobs</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="jp_listing_overview_list_outside_main_wrapper">
+                <div class="jp_listing_overview_list_main_wrapper">
+                  <div class="jp_listing_list_icon">
+                    <i class="fa fa-map-marker"></i>
+                  </div>
+                  <div class="jp_listing_list_icon_cont_wrapper">
+                    <ul>
+                      <li>Location:</li>
+                      <li>{{comp.1}}</li>
+                    </ul>
+                  </div>
+                </div>
+                <div
+                  class="jp_listing_overview_list_main_wrapper jp_listing_overview_list_main_wrapper2"
+                >
+                  <div class="jp_listing_list_icon">
+                    <i class="fa fa-info-circle"></i>
+                  </div>
+                  <div class="jp_listing_list_icon_cont_wrapper">
+                    <ul>
+                      <li>Job Open:</li>
+                      <li>{{comp.8}}</li>
+                    </ul>
+                  </div>
+                </div>
+                <div
+                  class="jp_listing_overview_list_main_wrapper jp_listing_overview_list_main_wrapper2"
+                >
+                  <div class="jp_listing_list_icon">
+                    <i class="fa fa-th-large"></i>
+                  </div>
+                  <div class="jp_listing_list_icon_cont_wrapper">
+                    <ul>
+                      <li>Company Type:</li>
+                      <li>{{comp.2}}</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="jp_job_post_right_overview_btn_wrapper">
+                  <div class="jp_job_post_right_overview_btn">
+                    <ul>
+                      <li><a href="./edit/{{comp.9}}">Edit</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

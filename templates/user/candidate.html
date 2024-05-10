@@ -1,0 +1,109 @@
+{% extends 'user/master.html' %} {% load static %} {% block title %}
+<title>Candidate Profile</title>
+{% endblock %} {% block mycontent %}
+<!-- jp Tittle Wrapper Start -->
+<div class="jp_tittle_main_wrapper">
+  <div class="jp_tittle_img_overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="jp_tittle_heading_wrapper">
+          <div class="jp_tittle_heading">
+            <h2>Candidate</h2>
+          </div>
+          <div class="jp_tittle_breadcrumb_main_wrapper">
+            <div class="jp_tittle_breadcrumb_wrapper">
+              <ul>
+                <li><a href="#">Home</a> <i class="fa fa-angle-right"></i></li>
+                <li>Candidate</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- jp Tittle Wrapper End -->
+<!-- jp profile Wrapper Start -->
+
+<div class="jp_cp_profile_main_wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+        <div class="jp_cp_left_side_wrapper">
+          <div class="jp_cp_left_pro_wallpaper">
+            <img
+              src="{% static 'user/images/content/cp1.png' %}"
+              alt="profile_img"
+              height="100px"
+              width="100px"
+            />
+            <h2>{{cand.2}}</h2>
+          </div>
+          <div class="jp_cp_rd_wrapper">
+            <ul>
+              <li>
+                <a href="{{cand.9}}" download
+                  ><i class="fa fa-download"></i> &nbsp;Download Resume</a
+                >
+              </li>
+              <li>
+                <a href="tel:{{cand.7}}"
+                  ><i class="fa fa-phone"></i> &nbsp;Contact candidate</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+        <div class="jp_cp_right_side_wrapper">
+          <div class="jp_cp_right_side_inner_wrapper">
+            <h2>PERSONAL DETAILS</h2>
+            <table>
+              <tbody>
+                <tr>
+                  <td class="td-w25">Full Name</td>
+                  <td class="td-w10">:</td>
+                  <td class="td-w65">{{cand.2}}</td>
+                </tr>
+                <tr>
+                  <td class="td-w25">Address</td>
+                  <td class="td-w10">:</td>
+                  <td class="td-w65"> {{cand.3}} </td>
+                </tr>
+                <tr>
+                  <td class="td-w25">Phone</td>
+                  <td class="td-w10">:</td>
+                  <td class="td-w65">+91 {{cand.7}}</td>
+                </tr>
+                <tr>
+                  <td class="td-w25">Email</td>
+                  <td class="td-w10">:</td>
+                  <td class="td-w65"
+                    ><a href="mailto:{{cand.5}}">{{cand.5}}</a></td
+                  >
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      {% if request.COOKIES.Job_Seeker_Id %}
+      <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 hidden-sm hidden-xs">
+        <div class="jp_navi_right_btn_wrapper">
+          <ul>
+            <li>
+              <a href="/JobSeekers/edit/{{cand.0}}"
+                ><i class="fa fa-pencil-square"></i>&nbsp;Edit Profile</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

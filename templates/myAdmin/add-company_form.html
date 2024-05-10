@@ -1,0 +1,198 @@
+{% extends 'myAdmin/master.html' %} {% load static %} {% block title %}
+<title>Add Company</title>
+{% endblock %} {% block content %}
+<div class="card-body">
+  <h4 class="card-title">Company Form</h4>
+  <p class="card-description">Company Form</p>
+  <form
+    action="Company/inserted"
+    class="forms-sample"
+    id="Company_form"
+    enctype="multipart/form-data"
+    method="POST"
+  >
+    {% csrf_token %}
+    <!--<div class="form-group row">
+          <label for="exampleInputMobile" class="col-sm-3 col-form-label">Company ID</label>
+          <div class="col-sm-9">
+            <input type="number" class="form-control" id="exampleInputUsername2" name="comp_id" pattern="[0-9]{10}" placeholder="Enter Company Id" title="Kindly Enter Only Numbers." required/>
+          </div>
+    </div>-->
+    <div class="form-group row">
+      <label for="exampleInputEmail2" class="col-sm-3 col-form-label"
+        >Email Id</label
+      >
+      <div class="col-sm-9">
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail2"
+          name="comp_email"
+          placeholder="Email ID"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="exampleInputPassword2" class="col-sm-3 col-form-label"
+        >Password</label
+      >
+      <div class="col-sm-9">
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="comp_passwd"
+          minlength="6"
+          placeholder="Enter Password"
+          required
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="exampleInputName" class="col-sm-3 col-form-label"
+        >Company Name</label
+      >
+      <div class="col-sm-9">
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputName"
+          name="comp_name"
+          pattern="^[A-Za-z -]+$"
+          placeholder="Enter Company Name"
+          required
+          title="Kindly Enter Only Characters."
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="exampleInputName" class="col-sm-3 col-form-label"
+        >About Company</label
+      >
+      <div class="col-sm-9">
+        <textarea
+          class="form-control"
+          name="about_comp"
+          placeholder="Enter About Company"
+          required
+        ></textarea>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="exampleInputName" class="col-sm-3 col-form-label"
+        >Company Type</label
+      >
+      <div class="col-sm-9">
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputName"
+          name="comp_type"
+          pattern="^[A-Za-z -]+$"
+          placeholder="Enter Company Type"
+          required
+          title="Kindly Enter Only Characters."
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="exampleInputName" class="col-sm-3 col-form-label"
+        >Address</label
+      >
+      <div class="col-sm-9">
+        <textarea
+          class="form-control"
+          name="comp_address"
+          placeholder="Enter Address"
+          required
+        ></textarea>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="exampleInputMobile" class="col-sm-3 col-form-label"
+        >Mobile Number</label
+      >
+      <div class="col-sm-9">
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputMobile"
+          maxlength="10"
+          minlength="10"
+          name="comp_mobile"
+          pattern="[0-9]{10}"
+          placeholder="Enter Mobile Number"
+          required
+          title="Kindly Enter Valid Mobile Number."
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="exampleInputName" class="col-sm-3 col-form-label"
+        >Website</label
+      >
+      <div class="col-sm-9">
+        <input
+          type="text"
+          class="form-control"
+          id="exampleInputName"
+          name="website"
+          placeholder="Enter Website Name"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="exampleInputMobile" class="col-sm-3 col-form-label"
+        >Is Admin</label
+      >
+      <div class="col-sm-9">
+        <input
+          type="radio"
+          id="exampleInputMobile"
+          maxlength="1"
+          minlength="1"
+          name="is_admin"
+          pattern="[0-9]{10}"
+          placeholder="Is Admin"
+          required
+          title="please enter valid data"
+        />
+        &nbsp;&nbsp;Yes
+        <input
+          type="radio"
+          id="exampleInputMobile"
+          maxlength="1"
+          minlength="1"
+          name="is_admin"
+          pattern="[0-9]{10}"
+          placeholder="Is Admin"
+          required
+          title="please enter valid data"
+        />&nbsp;&nbsp;No
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="exampleInputMobile" class="col-sm-3 col-form-label"
+        >Logo</label
+      >
+      <div class="col-sm-9">
+        <input
+          type="file"
+          name="comp_logo"
+          value=""
+          placeholder="Company Logo*"
+          required
+        />
+      </div>
+    </div>
+    <button type="reset" class="btn btn-primary mr-2">Reset</button>
+    <button
+      type="submit"
+      class="btn btn-primary mr-2"
+      onclick="return addMsg();"
+      >Submit</button
+    >
+  </form>
+</div>
+{% endblock%}
