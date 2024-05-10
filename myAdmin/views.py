@@ -3,16 +3,21 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.conf import settings
 from django.core.files.storage import FileSystemStorage
+
+import mysql.connector as mydb
+import os
 
-import mysql.connector as mydb
+from dotenv import load_dotenv
+
+load_dotenv() 
 
 connection = mydb.connect(
-    host="mysql-spd-visesh-spd.a.aivencloud.com",
-    user="visesh",
-    passwd="AVNS_QVWrxlXGSJWEd9a9TUi",
-    database="job_finder",
-    port=26275,
-    auth_plugin="mysql_native_password",
+    host=os.getenv("DB_HOST"),
+    user=os.getenv("DB_USER"),
+    passwd=os.getenv("DB_PASSWORD"),
+    database=os.getenv("DB_NAME"),
+    port=os.getenv("DB_PORT"),
+    auth_plugin=os.getenv("DB_AUTH_PLUGIN"),
 )
 
 cur = connection.cursor()
