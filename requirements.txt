@@ -1,4 +1,3 @@
 django
-django
 dotenv
 mysql-connector-python
